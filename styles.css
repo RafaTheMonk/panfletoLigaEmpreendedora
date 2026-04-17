@@ -477,9 +477,93 @@ footer span {
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-  .btn-secondary { margin-left: 0; margin-top: 12px; }
-  .cta-area { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero { padding: 40px 16px 30px; }
+
+  .hero-title { font-size: clamp(2.2rem, 10vw, 4rem); }
+
+  .hero-sub { font-size: 0.88rem; letter-spacing: 0.08em; padding: 0 8px; }
+
+  .section-title { font-size: clamp(1.3rem, 5vw, 2rem); }
+
+  .video-section { padding: 16px 0 36px; }
+
+  .social-section { padding: 16px 0 48px; }
+
   .social-grid { gap: 10px; }
-  .social-btn { font-size: 0.7rem; padding: 10px 16px; }
+
+  .social-btn { font-size: 0.72rem; padding: 11px 18px; gap: 8px; }
+  .social-btn svg { width: 16px; height: 16px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container { padding: 0 14px; }
+
+  /* Marquee menor */
+  .marquee-track span { font-size: 0.78rem; margin: 0 24px; letter-spacing: 0.12em; }
+
+  /* Hero */
+  .hero { padding: 30px 14px 24px; }
+  .badge { font-size: 0.6rem; letter-spacing: 0.15em; padding: 5px 12px; }
+  .hero-title { font-size: clamp(2rem, 13vw, 3.2rem); }
+  .hero-sub { font-size: 0.82rem; letter-spacing: 0.06em; margin-top: 16px; }
+
+  /* CTAs empilhados */
+  .cta-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 36px;
+    padding: 0 14px;
+  }
+  .btn-cta {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 16px 20px;
+    letter-spacing: 0.2em;
+  }
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    font-size: 0.78rem;
+    padding: 12px 20px;
+  }
+
+  /* Video */
+  .video-section { padding: 10px 0 30px; }
+  .video-wrapper { padding: 4px; }
+
+  /* Social: 2 por linha */
+  .social-section { padding: 10px 0 40px; }
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .social-btn {
+    font-size: 0.68rem;
+    padding: 10px 10px;
+    letter-spacing: 0.08em;
+    justify-content: center;
+    clip-path: none;
+    border-radius: 2px;
+    gap: 6px;
+  }
+  .social-btn svg { width: 15px; height: 15px; }
+
+  /* Footer */
+  footer { font-size: 0.62rem; letter-spacing: 0.1em; padding: 20px 14px; }
+}
+
+/* Telas muito pequenas (320px) */
+@media (max-width: 360px) {
+  .hero-title { font-size: clamp(1.7rem, 14vw, 2.6rem); }
+  .social-grid { grid-template-columns: 1fr; }
+  .social-btn { justify-content: center; }
 }
