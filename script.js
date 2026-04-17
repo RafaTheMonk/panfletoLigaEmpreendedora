@@ -1,19 +1,3 @@
-// ── YouTube Video Embed ──
-const YT_VIDEO_ID = 'SEU_VIDEO_ID_AQUI'; // Substitua pelo ID do vídeo do YouTube
-
-function loadVideo() {
-  const container = document.getElementById('videoContainer');
-  const iframe = document.createElement('iframe');
-  iframe.src = `https://www.youtube.com/embed/${YT_VIDEO_ID}?autoplay=1&rel=0`;
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  iframe.allowFullscreen = true;
-  iframe.title = 'Liga Empreendedora UFBA';
-  container.innerHTML = '';
-  container.appendChild(iframe);
-}
-
-document.getElementById('videoContainer').addEventListener('click', loadVideo);
-
 // ── Neon flicker random on load ──
 function randomFlicker() {
   const elements = document.querySelectorAll('.flicker-random');
