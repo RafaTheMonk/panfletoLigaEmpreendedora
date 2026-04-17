@@ -416,6 +416,12 @@ body::after {
   box-shadow: var(--glow-cyan);
 }
 
+.social-btn.site {
+  color: var(--neon-purple);
+  border-color: var(--neon-purple);
+  box-shadow: var(--glow-purple);
+}
+
 .social-btn.email {
   color: var(--neon-yellow);
   border-color: var(--neon-yellow);
