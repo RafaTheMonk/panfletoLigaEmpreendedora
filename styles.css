@@ -268,31 +268,30 @@ body::after {
   color: rgba(255,255,255,0.8);
 }
 
-/* Rotações e posições únicas por card */
-.card-1 {
-  transform: rotate(-4deg) translate(-20px, 10px);
+/* Cores ciclando por nth-child (4 cores) */
+.photo-card:nth-child(4n+1) {
   border-color: var(--neon-purple);
   box-shadow: var(--glow-purple), 0 8px 32px rgba(0,0,0,0.6);
-  z-index: 2;
 }
-.card-2 {
-  transform: rotate(3deg) translate(10px, -15px);
+.photo-card:nth-child(4n+2) {
   border-color: var(--neon-pink);
   box-shadow: var(--glow-pink), 0 8px 32px rgba(0,0,0,0.6);
-  z-index: 3;
 }
-.card-3 {
-  transform: rotate(-2.5deg) translate(-15px, 8px);
+.photo-card:nth-child(4n+3) {
   border-color: var(--neon-cyan);
   box-shadow: var(--glow-cyan), 0 8px 32px rgba(0,0,0,0.6);
-  z-index: 2;
 }
-.card-4 {
-  transform: rotate(4.5deg) translate(5px, -10px);
+.photo-card:nth-child(4n+4) {
   border-color: var(--neon-yellow);
   box-shadow: 0 0 7px var(--neon-yellow), 0 0 20px var(--neon-yellow), 0 8px 32px rgba(0,0,0,0.6);
-  z-index: 1;
 }
+
+/* Rotações alternadas por nth-child */
+.photo-card:nth-child(5n+1) { transform: rotate(-4deg)   translate(-10px,  8px); }
+.photo-card:nth-child(5n+2) { transform: rotate( 3deg)   translate( 10px, -12px); }
+.photo-card:nth-child(5n+3) { transform: rotate(-2.5deg) translate(-8px,   6px); }
+.photo-card:nth-child(5n+4) { transform: rotate( 4.5deg) translate( 5px,  -8px); }
+.photo-card:nth-child(5n+5) { transform: rotate(-1.5deg) translate(-12px, 10px); }
 
 .photo-card:hover {
   transform: rotate(0deg) scale(1.08) translateY(-8px) !important;
@@ -300,21 +299,22 @@ body::after {
   box-shadow: 0 0 10px #fff, 0 0 30px var(--neon-purple), 0 0 60px var(--neon-purple), 0 16px 40px rgba(0,0,0,0.8) !important;
 }
 
-/* Mobile: grade 2x2 sem rotação excessiva */
+/* Mobile: grade 2 colunas */
 @media (max-width: 600px) {
   .events-scatter {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 14px;
     padding: 20px 14px;
     min-height: unset;
   }
   .photo-card { width: 100%; }
-  .card-1 { transform: rotate(-2deg); }
-  .card-2 { transform: rotate(2deg); }
-  .card-3 { transform: rotate(-1.5deg); }
-  .card-4 { transform: rotate(2.5deg); }
-  .photo-card img { height: 110px; }
+  .photo-card:nth-child(5n+1) { transform: rotate(-2deg); }
+  .photo-card:nth-child(5n+2) { transform: rotate( 2deg); }
+  .photo-card:nth-child(5n+3) { transform: rotate(-1.5deg); }
+  .photo-card:nth-child(5n+4) { transform: rotate( 2.5deg); }
+  .photo-card:nth-child(5n+5) { transform: rotate(-1deg); }
+  .photo-card img { height: 100px; }
 }
 
 /* ── DIVIDER ── */
