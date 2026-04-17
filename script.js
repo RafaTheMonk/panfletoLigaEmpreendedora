@@ -42,6 +42,38 @@ if (badge) {
   setTimeout(type, 500);
 }
 
+// ── Lightbox ──
+const lightbox        = document.getElementById('lightbox');
+const lightboxImg     = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose   = document.getElementById('lightboxClose');
+const lightboxBdrop   = document.getElementById('lightboxBackdrop');
+
+function openLightbox(src, caption) {
+  lightboxImg.src = src;
+  lightboxImg.alt = caption;
+  lightboxCaption.textContent = caption;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.photo-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const img     = card.querySelector('img');
+    const caption = card.querySelector('.photo-label').textContent;
+    openLightbox(img.src, caption);
+  });
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxBdrop.addEventListener('click', closeLightbox);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
 // ── Intersection Observer: fade-in sections ──
 const observer = new IntersectionObserver(
   entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
