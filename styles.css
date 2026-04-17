@@ -104,6 +104,29 @@ body::after {
   padding: 60px 20px 40px;
 }
 
+/* ── HERO LOGO ── */
+.hero-logo {
+  margin-bottom: 24px;
+}
+
+.hero-logo img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: grayscale(1) brightness(1.8) drop-shadow(0 0 8px #bf00ff) drop-shadow(0 0 20px #bf00ff);
+  animation: logo-pulse 3s ease-in-out infinite;
+}
+
+@keyframes logo-pulse {
+  0%, 100% { filter: grayscale(1) brightness(1.8) drop-shadow(0 0 8px #bf00ff) drop-shadow(0 0 20px #bf00ff); }
+  50%       { filter: grayscale(1) brightness(2.2) drop-shadow(0 0 14px #ff00ff) drop-shadow(0 0 35px #ff00ff); }
+}
+
+@media (max-width: 480px) {
+  .hero-logo img { width: 70px; height: 70px; }
+}
+
 .badge {
   display: inline-block;
   font-size: 0.75rem;
